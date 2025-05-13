@@ -22,10 +22,10 @@ void cargaCuenta(stCuenta *c, int idCliente){
     id++;
     c -> id = id;
     c -> idCliente = idCliente;
-    c -> nroCuenta = cargaCuenta();
-    c -> cbu = cargaCbu();
+    //c -> nroCuenta = cargaCuenta(c, idCliente);
+    //c -> cbu = cargaCbu();
     c -> tipoDeCuenta;
-    cargaCostoMenusal(c->costoMensual);
+    //cargaCostoMenusal(c->costoMensual);
     c -> saldo = 0;
     c -> eliminado = 0;
 }

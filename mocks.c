@@ -1,4 +1,5 @@
 #include "mocks.h"
+
 void cargaNombre(char nombre[]){
     char nombres[][30]= {
     "Juan", "Maria", "Carlos", "Ana", "Luis", "Laura", "Pedro", "Sofia", "Jorge", "Lucia",
@@ -69,8 +70,8 @@ void cargaDomicilio(stDomicilio* d) {
     char provincias[][30] = {"Buenos Aires", "Cordoba", "Santa Fe", "Mendoza", "Salta"};
 
     strcpy(d->calle, calles[rand() % 10]);
-    d->numero = 100 + rand() % 900;
-    strcpy(d->ciudad, ciudades[rand() % 5]);
+    //d->nro = 100 + rand() % 900;
+    strcpy(d->localidad, ciudades[rand() % 5]);
     strcpy(d->provincia, provincias[rand() % 5]);
-    sprintf(d->codigoPostal, "%04d", 1000 + rand() % 9000);
+    sprintf(d->cpos, "%04d", 1000 + rand() % 9000);
 }

@@ -9,7 +9,9 @@
 
 int main()
 {
-
+    stCliente cliente;
+    cargaCliente(&cliente);
+    printf("\n Nombre: %s", cliente.nombre);
     printf("Hello world!\n");
     return 0;
 }

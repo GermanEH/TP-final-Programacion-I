@@ -1,6 +1,8 @@
 #ifndef MOCKS_H_INCLUDED
 #define MOCKS_H_INCLUDED
 
+#include "stDomicilio.h"
+
 void cargaNombre(char nombre[]);
 void cargaApellido(char apellido[]);
 void cargaDni(char dni[]);

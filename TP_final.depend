@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1747164964 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\main.c
+	<stdio.h>
+	<stdlib.h>
+	"stCliente.h"
+	"stCuenta.h"
+	"stDomicilio.h"
+	"stMovimiento.h"
+	"mocks.h"
+
+1747164841 c:\users\administrador\documents\utn\programación\programación 1\tp_final\stcliente.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stDomicilio.h"
+
+1747164653 c:\users\administrador\documents\utn\programación\programación 1\tp_final\stdomicilio.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1747164659 c:\users\administrador\documents\utn\programación\programación 1\tp_final\stcuenta.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1747164663 c:\users\administrador\documents\utn\programación\programación 1\tp_final\stmovimiento.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1747164679 c:\users\administrador\documents\utn\programación\programación 1\tp_final\mocks.h
+	"stDomicilio.h"
+
+1747162250 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\stdomicilio.c
+	"stDomicilio.h"
+
+1747162248 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\stmovimiento.c
+	"stMovimiento.h"
+
+1747164808 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\mocks.c
+	"mocks.h"
+
+1747164899 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\stcliente.c
+	"stCliente.h"
+
+1747164936 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\stcuenta.c
+	"stCuenta.h"
+

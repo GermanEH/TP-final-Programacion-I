@@ -1,6 +1,10 @@
 #ifndef STCUENTA_H_INCLUDED
 #define STCUENTA_H_INCLUDED
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 typedef struct {
     int id; /// campo único y autoincremental
     int idCliente; /// Id del Cliente dueño de la Cuenta;
@@ -10,7 +14,7 @@ typedef struct {
     float costoMensual; /// Costo de mantenimiento del producto
     float saldo; /// Debe actualizarse al modidificar o cargar un movimiento.
     int eliminado; /// 0 si está activo - 1 si está eliminado
-} stCuenta
+} stCuenta;
 
 void cargaCuenta(stCuenta *c, int idCliente);
 #endif // STCUENTA_H_INCLUDED

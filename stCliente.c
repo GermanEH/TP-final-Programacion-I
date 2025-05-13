@@ -43,10 +43,10 @@ void mostrarUnCliente(stCliente a) {
     printf("\nTelefono Movil........: %s", a.telefonoMovil);
     printf("\nDomicilio:");
     printf("\n  Calle...............: %s", a.domicilio.calle);
-    printf("\n  Numero..............: %d", a.domicilio.numero);
-    printf("\n  Ciudad..............: %s", a.domicilio.ciudad);
+    printf("\n  Numero..............: %d", a.domicilio.nro);
+    printf("\n  Ciudad..............: %s", a.domicilio.localidad);
     printf("\n  Provincia...........: %s", a.domicilio.provincia);
-    printf("\n  Codigo Postal.......: %s", a.domicilio.codigoPostal);
+    printf("\n  Codigo Postal.......: %s", a.domicilio.cpos);
     printf("\n__________________________________________\n");
 }
 
