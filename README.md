@@ -84,21 +84,21 @@ Es obligatorio la presentación de este trabajo para aprobar la materia.
 
 Funciones para ABMCL de Clientes, Cuentas y Movimientos
 
-&nbsp;&nbsp;&nbsp;- [ ] Alta, Baja, Modificación, Consulta y Listados de Clientes  
+&nbsp;&nbsp;&nbsp; 🟡 Alta, Baja, Modificación, Consulta y Listados de Clientes  
 
-&nbsp;&nbsp;&nbsp;- [ ] Alta, Baja, Modificación, Consulta y Listados de Cuentas por Cliente  
+&nbsp;&nbsp;&nbsp; 🟡 Alta, Baja, Modificación, Consulta y Listados de Cuentas por Cliente  
 
-&nbsp;&nbsp;&nbsp;- [ ] Alta, Baja, Modificación, Consulta y Listados de Movimientos por Cuenta y por mes.
+&nbsp;&nbsp;&nbsp; 🟡 Alta, Baja, Modificación, Consulta y Listados de Movimientos por Cuenta y por mes.
 
-&nbsp;&nbsp;&nbsp;- [ ] Alta de movimientos aleatorios del año actual anteriores a la fecha actual. 
+&nbsp;&nbsp;&nbsp; 🟡 Alta de movimientos aleatorios del año actual anteriores a la fecha actual. 
 
 La función deberá agregar 1000 eligiendo de manera aleatoria el cliente el mes y el día. Si el importe es negativo en descripción deberá insertar un texto relativo a un pago, transferencia a cuenta propia, transferencia a cuenta de terceros, pago de TC, o pagos con TD. Si es positivo en descripción deberá insertar un texto relativo a un cobro, ej. crédito Haberes, transferencia de cuenta propia, transferencia de cuenta ajena, acreditación de plazo fijo, etc. Cada vez que se ingresa o modifica un movimiento se debe actualizar el saldo de la cuenta.
 
-&nbsp;&nbsp;&nbsp;- [ ] Validación en el ingreso de los Datos.  
+&nbsp;&nbsp;&nbsp; 🟡 Validación en el ingreso de los Datos.  
 
-&nbsp;&nbsp;&nbsp;- [ ] Buscar Movimientos por fecha.  
+&nbsp;&nbsp;&nbsp; 🟡 Buscar Movimientos por fecha.  
 
-&nbsp;&nbsp;&nbsp;- [ ] Buscar Clientes por Apellido / dni con bùsqueda binaria.  
+&nbsp;&nbsp;&nbsp; 🟡 Buscar Clientes por Apellido / dni con bùsqueda binaria.  
 
 Funciones para manejo de archivos binarios
 Persistencia de datos en Archivos.
