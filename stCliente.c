@@ -7,17 +7,17 @@
  * @return stCliente.
  *
  * @author Germán Ezequiel Horianski
- * @date 2025/06/13
+ * @date 2025/05/13
  * @version 1.0
  *
- * @pre no hay
+ * @pre Recibe un cliente
  * @post La estructura se retorna con un id autoincremental y el resto de los datos generados automáticamente.
  *
  * @code
- * stCliente cliente = cargaUnCliente();
+ * stCliente cliente = cargaCliente();
  * @endcode
  */
-void cargaCliente(stCliente* c) {
+void cargaCliente(stCliente *c) {
     static id = 0;
     id++;
     c->id = id;

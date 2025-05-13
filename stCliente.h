@@ -7,10 +7,12 @@ typedef struct {
     char apellido[30];
     char dni[10];
     char email[30];
-    stDomicilio domicilio;
+clu    stDomicilio domicilio;
     char telefonoFijo[12];
     char telefonoMovil[12];
     int eliminado; /// 0 si está activo - 1 si está eliminado
 } stCliente
+
+void cargaCliente(stCliente *c);
 
 #endif // STCLIENTE_H_INCLUDED
