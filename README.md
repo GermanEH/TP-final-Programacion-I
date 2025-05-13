@@ -4,17 +4,17 @@ UTN – FRMDP Mar del Plata TUP - Programación 1
 Trabajo Práctico Final
 
 
-Integrantes del grupo
+### Integrantes del grupo
 
-Nota
+### Nota
 
-Introducción
+### Introducción
 Con el propósito principal de integrar todo lo aprendido en la materia Programación 1 hemos planteado la siguiente problemática:
 
 Codificar un sistema Bancario, encargado por el banco B.F.S.A. (Bicicleta Fácil S.A.) para el control  de Clientes y sus Movimientos de dinero 
 Generar la persistencia de los Clientes y sus Movimientos
 
-Fundamentación
+### Fundamentación
 El valor pedagógico de la propuesta se apoya en el aprendizaje colaborativo (se formarán grupos de 4 alumnos) a partir del desarrollo de un proyecto de software. Para que este tipo de proyectos sea más exitoso, deben llevarse a cabo desde un enfoque que facilite alcanzar los Objetivos de Aprendizaje propuestos.
 Una de las ideas centrales es desarrollar competencias profesionales y preparar al futuro programador para el mundo laboral y el trabajo en equipo.
 En un ambiente de aprendizaje colaborativo, los estudiantes:
@@ -25,26 +25,26 @@ Transfieren conocimientos y habilidades a nuevas situaciones o circunstancias;
 Se responsabilizan y apropian tanto de su aprendizaje continuo de contenidos curriculares, como del desarrollo propio de competencias;
 Los estudiantes colaboran para el aprendizaje del grupo y el grupo colabora en el aprendizaje individual de estos.
 
-Objetivos
+### Objetivos
 De aprendizaje:
 Incorporar Arreglos, Matrices, Modularización, Estructuras de Datos y Archivos Binarios.
 Trabajar en forma colaborativa.
 
-Metodológicos:
+### Metodológicos:
 Ser  capaces  de  trabajar  en  un  proyecto  complejo,  aplicando  técnicas  de desarrollo de software.
 Lograr integrar contenidos de otras asignaturas.
 El   grupo  deberá  ir  mostrando   el  avance  sobre   el  trabajo   en  clase.
 
-Esquema de las Estructuras
+### Esquema de las Estructuras
 
-Estructura de Domicilio: stDomicilio
+### Estructura de Domicilio: stDomicilio
   char calle[30];
   char nro[6];
   char localidad[50];
   char provincia[40];
   char cpos[6];
 
-Estructura de Clientes: stCliente
+### Estructura de Clientes: stCliente
 int id; /// campo único y autoincremental
 int nroCliente;
 char nombre[30];
@@ -56,7 +56,7 @@ char telefonoFijo[12];
 char telefonoMovil[12];
 int eliminado; /// 0 si está activo - 1 si está eliminado
 
-  Estructura de Cuentas: stCuenta
+  ### Estructura de Cuentas: stCuenta
         int id; /// campo único y autoincremental	
     int idCliente /// Id del Cliente dueño de la Cuenta;
     char nroCuenta[24];
@@ -66,7 +66,7 @@ int eliminado; /// 0 si está activo - 1 si está eliminado
     float saldo; /// Debe actualizarse al modidificar o cargar un movimiento.
           int eliminado; /// 0 si está activo - 1 si está eliminado
 
-  Estructura de Movimientos: stMovimiento
+  ### Estructura de Movimientos: stMovimiento
 int id; /// campo único y autoincremental 
 int idCuenta; /// Id de la cuenta 
 char detalle[100];
@@ -76,7 +76,7 @@ int mes; /// 1 a 12
 int dia; /// 1 a … dependiendo del mes
 int eliminado; /// 0 si está activo - 1 si está eliminado
 
-###Modo de Evaluación del Trabajo Práctico
+### Modo de Evaluación del Trabajo Práctico
 
 Se establece el desarrollo de un trabajo práctico final, brindando una fecha límite de entrega del mismo: Según planificación de cada comisión
 La aprobación del trabajo práctico estará sujeta a los puntajes considerados en la tabla debajo.
@@ -122,8 +122,6 @@ Todas las funciones deben estar comentadas de la siguiente manera:
  */
 
 
-30
-
 Al realizar la entrega final, deberán tener en cuenta los siguientes puntos:
 Documentación completa según lo requerido por la cátedra, que será subido al campus de la UTN.
 Código del sistema completo, compilado y sin errores
@@ -131,9 +129,3 @@ Explicación presencial del sistema. Además, tiene que cumplir con las siguient
 Organizar en Menús
 Registrar Clientes y Movimientos
 Persistir datos en el archivo
-
-
-Desaprobado
-Aprobado
-
-
