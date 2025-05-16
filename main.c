@@ -7,11 +7,18 @@
 #include "stMovimiento.h"
 #include "mocks.h"
 
+#define NOMBRE_ARCHIVO "clientes.bin"
+#define CANTIDAD 5
+
 int main()
 {
     stCliente cliente;
-    cargaCliente(&cliente);
+    altaClienteAuto(&cliente);
+    cargaCliente(&cliente, NOMBRE_ARCHIVO);
     printf("\n Nombre: %s", cliente.nombre);
-    printf("Hello world!\n");
+    printf("\n Agregamos mas clientes: ");
+    cargaClientesAuto(CANTIDAD, NOMBRE_ARCHIVO);
+    printf("\n Removemos cliente: %s", cliente.nombre);
+    remueveCliente(&cliente, NOMBRE_ARCHIVO);
     return 0;
 }

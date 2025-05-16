@@ -17,7 +17,7 @@
  * stCliente cliente = cargaCliente();
  * @endcode
  */
-void cargaCliente(stCliente *c) {
+void altaClienteAuto(stCliente *c) {
     static id = 0;
     id++;
     c->id = id;
@@ -32,21 +32,106 @@ void cargaCliente(stCliente *c) {
     c->eliminado = 0;
 }
 
-void mostrarUnCliente(stCliente a) {
-    printf("\nId....................: %d", a.id);
-    printf("\nNro Cliente...........: %d", a.nroCliente);
-    printf("\nNombre................: %s", a.nombre);
-    printf("\nApellido..............: %s", a.apellido);
-    printf("\nDNI...................: %s", a.dni);
-    printf("\nEmail.................: %s", a.email);
-    printf("\nTelefono Fijo.........: %s", a.telefonoFijo);
-    printf("\nTelefono Movil........: %s", a.telefonoMovil);
+void muestraCliente(stCliente c) {
+    printf("\nId....................: %d", c.id);
+    printf("\nNro Cliente...........: %d", c.nroCliente);
+    printf("\nNombre................: %s", c.nombre);
+    printf("\nApellido..............: %s", c.apellido);
+    printf("\nDNI...................: %s", c.dni);
+    printf("\nEmail.................: %s", c.email);
+    printf("\nTelefono Fijo.........: %s", c.telefonoFijo);
+    printf("\nTelefono Movil........: %s", c.telefonoMovil);
     printf("\nDomicilio:");
-    printf("\n  Calle...............: %s", a.domicilio.calle);
-    printf("\n  Numero..............: %d", a.domicilio.nro);
-    printf("\n  Ciudad..............: %s", a.domicilio.localidad);
-    printf("\n  Provincia...........: %s", a.domicilio.provincia);
-    printf("\n  Codigo Postal.......: %s", a.domicilio.cpos);
+    printf("\n  Calle...............: %s", c.domicilio.calle);
+    printf("\n  Numero..............: %d", c.domicilio.nro);
+    printf("\n  Ciudad..............: %s", c.domicilio.localidad);
+    printf("\n  Provincia...........: %s", c.domicilio.provincia);
+    printf("\n  Codigo Postal.......: %s", c.domicilio.cpos);
     printf("\n__________________________________________\n");
 }
 
+void cargaCliente(stCliente *cliente, char path[]){
+
+    FILE *clientes = fopen(path, "ab");
+    if(clientes) {
+        fwrite(cliente, sizeof(stCliente), 1, clientes);
+        fclose(clientes);
+    }
+}
+
+int buscaCliente(stCliente cliente, char path[]){
+    FILE *clientes = fopen(path, "rb+");
+    int flag = 0;
+    stCliente c;
+    if(clientes){
+        while(flag == 0 && fread(&c, sizeof(stCliente), 1, clientes))
+        {
+            if(c.id == cliente.id)
+            {
+                flag = 1;
+            }
+        }
+    }
+    return c.id;
+};
+
+void copiaClientes2ArchivoTemp(char path[], int limite){
+    FILE *archivo = fopen(path,"rb");
+    stCliente cliente;
+    int flag = 0;
+    if(archivo){
+        FILE *temp = fopen("temp.bin","ab");
+        while(fread(&cliente, sizeof(stCliente), 1, archivo)){
+            if(cliente.id == limite) {
+                flag = 1;
+                return;
+            }
+            fwrite(&cliente, sizeof(cliente), 1, temp);
+        }
+    }
+}
+
+void copiaTemp2ArchivoClientes(char path[]){
+    FILE *archivo = fopen(path,"ab");
+    stCliente cliente;
+    if(archivo){
+        FILE *temp = fopen("temp.bin","rb");
+        while(fread(&cliente, sizeof(stCliente), 1, temp)){
+                fwrite(&cliente,sizeof(stCliente), 1,archivo);
+        }
+    }
+}
+
+void cargaClientesAuto(int cantidad, char path[]){
+    stCliente cliente;
+    FILE *clientes = fopen(path,"ab");
+    if(clientes) {
+        for(int i = 0;i<cantidad;i++)
+            {
+                altaClienteAuto(&cliente);
+                fwrite(&cliente, sizeof(stCliente), 1, clientes);
+                muestraCliente(cliente);
+            }
+    }
+}
+
+void muestraClientes(char path[]){
+    stCliente cliente;
+    FILE *clientes = fopen(path,"rb");
+    if(clientes){
+        while(fread(&cliente, sizeof(stCliente), 1, clientes))
+        {
+            muestraCliente(cliente);
+        }
+    }
+}
+
+
+void remueveCliente(stCliente *cliente, char path[]){
+    int id = 0;
+    id = buscaCliente(*cliente, path);
+    copiaClientes2ArchivoTemp(path, id);
+    copiaTemp2ArchivoClientes(path);
+    printf("mostramos:");
+    muestraClientes(path);
+}

@@ -19,6 +19,13 @@ typedef struct {
     int eliminado; /// 0 si está activo - 1 si está eliminado
 } stCliente;
 
-void cargaCliente(stCliente *c);
+void altaClienteAuto(stCliente *c);
+void muestraCliente(stCliente c);
+void cargaCliente(stCliente *cliente, char path[]);
+int buscaCliente(stCliente cliente, char path[]);
+void copiaClientes2ArchivoTemp(char path[], int limite);
+void copiaTemp2ArchivoClientes(char path[]);
+void remueveCliente(stCliente *cliente, char path[]);
+void cargaClientesAuto(int cantidad, char path[]);
 
 #endif // STCLIENTE_H_INCLUDED
