@@ -15,10 +15,14 @@ int main()
     stCliente cliente;
     altaClienteAuto(&cliente);
     cargaCliente(&cliente, NOMBRE_ARCHIVO);
-    printf("\n Nombre: %s", cliente.nombre);
+    muestraCliente(cliente);
     printf("\n Agregamos mas clientes: ");
     cargaClientesAuto(CANTIDAD, NOMBRE_ARCHIVO);
+    printf("\n Mostramos los clientes: ");
+    muestraClientes(NOMBRE_ARCHIVO);
     printf("\n Removemos cliente: %s", cliente.nombre);
     remueveCliente(&cliente, NOMBRE_ARCHIVO);
+    printf("\n Listado de clientes limpio:");
+    muestraClientes(NOMBRE_ARCHIVO);
     return 0;
 }

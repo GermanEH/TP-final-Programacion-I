@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1747424792 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\main.c
+1747512226 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\main.c
 	<stdio.h>
 	<stdlib.h>
 	"stCliente.h"
@@ -8,7 +8,7 @@
 	"stMovimiento.h"
 	"mocks.h"
 
-1747425521 c:\users\administrador\documents\utn\programación\programación 1\tp_final\stcliente.h
+1747513135 c:\users\administrador\documents\utn\programación\programación 1\tp_final\stcliente.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -41,7 +41,7 @@
 1747164808 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\mocks.c
 	"mocks.h"
 
-1747425536 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\stcliente.c
+1747513108 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\stcliente.c
 	"stCliente.h"
 
 1747164977 source:c:\users\administrador\documents\utn\programación\programación 1\tp_final\stcuenta.c

@@ -18,7 +18,7 @@
  * @endcode
  */
 void altaClienteAuto(stCliente *c) {
-    static id = 0;
+    static int id = 0;
     id++;
     c->id = id;
     c->nroCliente = cargaLegajo();
@@ -75,30 +75,21 @@ int buscaCliente(stCliente cliente, char path[]){
     return c.id;
 };
 
-void copiaClientes2ArchivoTemp(char path[], int limite){
+void copiaClientes2ArchivoTemp(char path[], int idClienteAEliminar){
     FILE *archivo = fopen(path,"rb");
     stCliente cliente;
     int flag = 0;
     if(archivo){
-        FILE *temp = fopen("temp.bin","ab");
-        while(fread(&cliente, sizeof(stCliente), 1, archivo)){
-            if(cliente.id == limite) {
-                flag = 1;
-                return;
+        FILE *temp = fopen("temp.bin","wb");
+        if(temp){
+            while(fread(&cliente, sizeof(stCliente), 1, archivo)){
+                if(cliente.id != idClienteAEliminar) {
+                    fwrite(&cliente, sizeof(stCliente), 1, temp);
+                }
             }
-            fwrite(&cliente, sizeof(cliente), 1, temp);
+            fclose(temp);
         }
-    }
-}
-
-void copiaTemp2ArchivoClientes(char path[]){
-    FILE *archivo = fopen(path,"ab");
-    stCliente cliente;
-    if(archivo){
-        FILE *temp = fopen("temp.bin","rb");
-        while(fread(&cliente, sizeof(stCliente), 1, temp)){
-                fwrite(&cliente,sizeof(stCliente), 1,archivo);
-        }
+        fclose(archivo);
     }
 }
 
@@ -112,6 +103,7 @@ void cargaClientesAuto(int cantidad, char path[]){
                 fwrite(&cliente, sizeof(stCliente), 1, clientes);
                 muestraCliente(cliente);
             }
+        fclose(clientes);
     }
 }
 
@@ -126,12 +118,22 @@ void muestraClientes(char path[]){
     }
 }
 
+void copiaTemp2ArchivoClientes(char path[]){
+    FILE *archivo = fopen(path,"wb");
+    stCliente cliente;
+    if(archivo){
+        FILE *temp = fopen("temp.bin","rb");
+        if(temp){
+            while(fread(&cliente, sizeof(stCliente), 1, temp)){
+                    fwrite(&cliente,sizeof(stCliente), 1,archivo);
+            }
+            fclose(temp);
+        }
+        fclose(archivo);
+    }
+}
 
 void remueveCliente(stCliente *cliente, char path[]){
-    int id = 0;
-    id = buscaCliente(*cliente, path);
-    copiaClientes2ArchivoTemp(path, id);
+    copiaClientes2ArchivoTemp(path, cliente -> id);
     copiaTemp2ArchivoClientes(path);
-    printf("mostramos:");
-    muestraClientes(path);
 }

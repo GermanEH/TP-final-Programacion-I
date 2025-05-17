@@ -21,9 +21,10 @@ typedef struct {
 
 void altaClienteAuto(stCliente *c);
 void muestraCliente(stCliente c);
+void muestraClientes(char path[]);
 void cargaCliente(stCliente *cliente, char path[]);
 int buscaCliente(stCliente cliente, char path[]);
-void copiaClientes2ArchivoTemp(char path[], int limite);
+void copiaClientes2ArchivoTemp(char path[], int idClienteAEliminar);
 void copiaTemp2ArchivoClientes(char path[]);
 void remueveCliente(stCliente *cliente, char path[]);
 void cargaClientesAuto(int cantidad, char path[]);
